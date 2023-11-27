@@ -16,4 +16,10 @@ int my_head(){
 		printf("Error: l'arxiu no existeix, sortint del programa.);
 		exit();
 		}
-	
+	if(fd >= 0){
+		if(wc -l == 0){
+			printf("Error: l'arxiu està buit, sortint del programa.);
+                	exit();
+                }
+		else{
+			
