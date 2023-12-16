@@ -83,3 +83,24 @@ int my_mv() {
 
     return 0;
 }
+int main() {
+    int opcio;
+    printf("Selecciona una opció:\n");
+    printf("1. my_head\n");
+    printf("2. my_mv\n");
+    scanf("%d", &opcio);
+
+    switch (opcion) {
+        case 1:
+            my_head();
+            break;
+        case 2:
+            my_mv();
+            break;
+        default:
+            printf("Opció no vàlida\n");
+            break;
+    }
+
+    return 0;
+}
