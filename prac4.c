@@ -5,7 +5,7 @@
 
 #define MAX_LINE_LENGTH 256
 
-int main() {
+int my_head() {
     char filename[MAX_LINE_LENGTH];
     int num_lines;
 
