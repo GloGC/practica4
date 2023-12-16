@@ -6,17 +6,17 @@
 #define MAX_LINE_LENGTH 256
 
 int my_head() {
-    char filename[MAX_LINE_LENGTH];
+    char arxiu[MAX_LINE_LENGTH];
     int num_lines;
 
     printf("Introdueix el nom de l'arxiu: ");
-    scanf("%s", filename);
+    scanf("%s", arxiu);
 
     printf("Introdueix el nombre de línies a mostrar: ");
     scanf("%d", &num_lines);
 
-    int file_descriptor = open(filename, O_RDONLY);
-    if (file_descriptor == -1) {
+    int fd = open(filename, O_RDONLY);
+    if (fd == -1) {
         perror("Error en obrir l'arxiu");
         return 1;
     }
@@ -25,7 +25,7 @@ int my_head() {
     ssize_t bytes_read;
     int lines_read = 0;
 
-    while ((bytes_read = read(file_descriptor, buffer, MAX_LINE_LENGTH)) > 0 && lines_read < num_lines) {
+    while ((bytes_read = read(fd, buffer, MAX_LINE_LENGTH)) > 0 && lines_read < num_lines) {
         for (ssize_t i = 0; i < bytes_read && lines_read < num_lines; ++i) 
 {
             if (buffer[i] == '\n') {
@@ -35,7 +35,7 @@ int my_head() {
         }
     }
 
-    if (close(file_descriptor) == -1) {
+    if (close(fd) == -1) {
         perror("Error en tancar l'arxiu");
         return 1;
     }
