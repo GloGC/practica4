@@ -15,7 +15,7 @@ int my_head() {
     printf("Introdueix el nombre de línies a mostrar: ");
     scanf("%d", &num_lines);
 
-    int fd = open(filename, O_RDONLY);
+    int fd = open(arxiu, O_RDONLY);
     if (fd == -1) {
         perror("Error en obrir l'arxiu");
         return 1;
@@ -90,7 +90,7 @@ int main() {
     printf("2. my_mv\n");
     scanf("%d", &opcio);
 
-    switch (opcion) {
+    switch (opcio) {
         case 1:
             my_head();
             break;
