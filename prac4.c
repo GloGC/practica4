@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>  
+#include <stdlib.h>
 
 #define MAX_LINE_LENGTH 256
 
@@ -25,8 +25,8 @@ int my_head() {
     ssize_t bytes_read;
     int lines_read = 0;
 
-    while ((bytes_read = read(fd, buffer, MAX_LINE_LENGTH)) > 0 && lines_read < num_lines) {
-        for (ssize_t i = 0; i < bytes_read && lines_read < num_lines; ++i) 
+    while ((bytes_read = read(fd, buffer, MAX_LINE_LENGTH)) > 0 && lines_read < $
+        for (ssize_t i = 0; i < bytes_read && lines_read < num_lines; ++i)
 {
             if (buffer[i] == '\n') {
                 ++lines_read;
